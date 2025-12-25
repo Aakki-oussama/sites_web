@@ -23,9 +23,10 @@ export const CONTACT_INFO = {
     instagram: "https://www.instagram.com/eco_laundry22/"
   },
   hours: {
-    open: "8:00",
-    close: "20:00",
-    display: "8:00 - 20:00"
+    open: "9:00",
+    close: "21:00",
+    display: "9:00 - 21:00",
+    days: "Lun-Dim (sauf Vendredi)"
   }
 };
 

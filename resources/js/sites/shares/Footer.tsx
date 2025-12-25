@@ -1,4 +1,4 @@
-import { APP_NAME, LOCATION, ICONS, NAV_LINKS, CONTACT_INFO } from '@/sites/shares/constants';
+import { APP_NAME, ICONS, NAV_LINKS, CONTACT_INFO } from '@/sites/shares/constants';
 
 export default function Footer() {
   return (
@@ -91,9 +91,16 @@ export default function Footer() {
                   {CONTACT_INFO.email}
                 </a>
               </li>
-              <li className="mt-6 flex items-center gap-2">
-                <span className="w-2 h-2 bg-highlight rounded-full animate-pulse" />
-                <span className="text-[10px] font-black uppercase text-brand/60 dark:text-highlight/60 tracking-widest">Ouvert : 8:00 - 20:00</span>
+              <li className="mt-6 flex flex-col gap-1">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-highlight rounded-full animate-pulse" />
+                  <span className="text-[10px] font-black uppercase text-brand/60 dark:text-highlight/60 tracking-widest">
+                    Ouvert : {CONTACT_INFO.hours.display}
+                  </span>
+                </div>
+                <span className="text-[10px] font-black uppercase text-brand/60 dark:text-highlight/60 tracking-widest ml-4">
+                  {CONTACT_INFO.hours.days}
+                </span>
               </li>
             </ul>
           </div>
