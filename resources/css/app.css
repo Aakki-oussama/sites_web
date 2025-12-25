@@ -145,7 +145,7 @@
     --sidebar-border: oklch(0.269 0 0);
     --sidebar-ring: oklch(0.439 0 0);
 
-    /* Brand colors - for site header components (dark mode) */
+    /* Brand colors - for site  (dark mode) */
     --brand: #28a7da;        /* Lighter brand color for dark mode */
     --highlight: #3bb3e8;    /* Lighter highlight for dark mode */
     --light: #EEEEEE;       /* Light color stays same in dark mode */
@@ -166,8 +166,8 @@
 /* Glass morphism effect - for header navigation */
 .glass {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .dark .glass {

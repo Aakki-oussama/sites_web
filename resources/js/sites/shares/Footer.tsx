@@ -1,5 +1,4 @@
 import { APP_NAME, ICONS, NAV_LINKS, CONTACT_INFO } from '@/sites/shares/constants';
-import { Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -50,7 +49,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Navigation</h4>
+            <h2 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Navigation</h2>
             <ul className="space-y-4">
               {NAV_LINKS.map(link => (
                 <li key={link.name}>
@@ -63,7 +62,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Nos Services</h4>
+            <h2 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Nos Services</h2>
             <ul className="space-y-4 text-slate-600 dark:text-slate-300 font-semibold">
               <li>Lavage & Séchage</li>
               <li>Nettoyage de Tapis</li>
@@ -73,7 +72,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Contact</h4>
+            <h2 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Contact</h2>
             <ul className="space-y-4">
               <li className="flex items-start gap-4 text-slate-600 dark:text-slate-300 font-semibold">
                 <div className="text-brand dark:text-brand mt-1">{ICONS.MapPin}</div>
@@ -91,24 +90,20 @@ export default function Footer() {
                   {CONTACT_INFO.email}
                 </a>
               </li>
-              <li className="mt-6 flex flex-col gap-1">
-                <div className="flex items-center gap-2">
-                  <Clock size={12} className="text-brand dark:text-brand" />
-                  <span className="text-[10px] font-black uppercase text-slate-600/70 dark:text-slate-300/70 tracking-widest">
-                    Ouvert : {CONTACT_INFO.hours.display}
-                  </span>
+              <li className="flex items-start gap-4 text-slate-600 dark:text-slate-300 font-semibold">
+                <div className="text-brand dark:text-brand mt-1">{ICONS.Clock}</div>
+                <div className="flex flex-col">
+                  <span>Ouvert : {CONTACT_INFO.hours.display}</span>
+                  <span>{CONTACT_INFO.hours.days}</span>
                 </div>
-                <span className="text-[10px] font-black uppercase text-slate-600/70 dark:text-slate-300/70 tracking-widest ml-8">
-                  {CONTACT_INFO.hours.days}
-                </span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-12 border-t border-brand/10 flex items-center justify-center">
-          <p className="text-slate-600 dark:text-slate-300 text-sm font-bold">
-            © {new Date().getFullYear()} {APP_NAME}. <span className="text-slate-600/70 dark:text-slate-300/70">L'éclat durable à Meknès.</span>
+          <p className="text-brand dark:text-slate-300 text-sm font-bold">
+            © {new Date().getFullYear()} {APP_NAME}. <span className="text-brand dark:text-slate-300/70">L'éclat durable à Meknès.</span>
           </p>
         </div>
       </div>
