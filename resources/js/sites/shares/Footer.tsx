@@ -64,11 +64,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-brand dark:text-highlight mb-6 uppercase tracking-widest text-xs">Nos Services</h4>
             <ul className="space-y-4 text-slate-600 dark:text-slate-400 font-semibold">
-              <li className="hover:text-brand dark:hover:text-highlight cursor-pointer transition-colors">Lavage & Séchage</li>
-              <li className="hover:text-brand dark:hover:text-highlight cursor-pointer transition-colors">Nettoyage de Tapis</li>
-              <li className="hover:text-brand dark:hover:text-highlight cursor-pointer transition-colors">Repassage de Luxe</li>
-              <li className="hover:text-brand dark:hover:text-highlight cursor-pointer transition-colors">Soin des Textiles</li>
-              <li className="hover:text-brand dark:hover:text-highlight cursor-pointer transition-colors">Rideaux & Couettes</li>
+              <li>Lavage & Séchage</li>
+              <li>Nettoyage de Tapis</li>
+              <li>Repassage de Luxe</li>
+              <li>Rideaux & Couettes</li>
             </ul>
           </div>
 
