@@ -1,4 +1,5 @@
 import { APP_NAME, ICONS, NAV_LINKS, CONTACT_INFO } from '@/sites/shares/constants';
+import { Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -7,14 +8,14 @@ export default function Footer() {
         <div className="grid lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-brand dark:bg-[#19477b] rounded-xl flex items-center justify-center text-light font-bold shadow-lg shadow-brand/20">
+              <div className="w-10 h-10 bg-brand dark:bg-brand-static rounded-xl flex items-center justify-center text-light font-bold shadow-lg shadow-brand/20">
                 E
               </div>
-              <span className="text-brand dark:text-[#19477b] font-black text-2xl tracking-tighter uppercase">
+              <span className="text-brand dark:text-brand font-black text-2xl tracking-tighter uppercase">
                 {APP_NAME}
               </span>
             </div>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 font-medium">
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 font-medium">
               L'excellence du pressing éco-responsable au cœur de Meknès. Un soin unique pour chaque fibre, du quotidien au tapis d'exception.
             </p>
             <div className="flex gap-4">
@@ -49,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-brand dark:text-[#19477b] mb-6 uppercase tracking-widest text-xs">Navigation</h4>
+            <h4 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Navigation</h4>
             <ul className="space-y-4">
               {NAV_LINKS.map(link => (
                 <li key={link.name}>
@@ -62,8 +63,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-brand dark:text-[#19477b] mb-6 uppercase tracking-widest text-xs">Nos Services</h4>
-            <ul className="space-y-4 text-slate-600 dark:text-slate-400 font-semibold">
+            <h4 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Nos Services</h4>
+            <ul className="space-y-4 text-slate-600 dark:text-slate-300 font-semibold">
               <li>Lavage & Séchage</li>
               <li>Nettoyage de Tapis</li>
               <li>Repassage de Luxe</li>
@@ -72,32 +73,32 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-brand dark:text-[#19477b] mb-6 uppercase tracking-widest text-xs">Contact</h4>
+            <h4 className="font-bold text-brand dark:text-brand mb-6 uppercase tracking-widest text-xs">Contact</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-4 text-slate-600 dark:text-slate-400 font-semibold">
-                <div className="text-brand dark:text-[#19477b] mt-1">{ICONS.MapPin}</div>
+              <li className="flex items-start gap-4 text-slate-600 dark:text-slate-300 font-semibold">
+                <div className="text-brand dark:text-brand mt-1">{ICONS.MapPin}</div>
                 <span>{CONTACT_INFO.address.full}</span>
               </li>
-              <li className="flex items-center gap-4 text-slate-600 dark:text-slate-400 font-semibold">
-                <div className="text-brand dark:text-[#19477b]">{ICONS.Phone}</div>
-                <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-brand dark:hover:text-highlight transition-colors">
+              <li className="flex items-center gap-4 text-slate-600 dark:text-slate-300 font-semibold">
+                <div className="text-brand dark:text-brand">{ICONS.Phone}</div>
+                <a href={`tel:${CONTACT_INFO.phone}`} className="text-slate-600 dark:text-slate-300 hover:text-brand dark:hover:text-highlight transition-colors">
                   {CONTACT_INFO.phone}
                 </a>
               </li>
-              <li className="flex items-center gap-4 text-slate-600 dark:text-slate-400 font-semibold">
-                <div className="text-brand dark:text-[#19477b]">{ICONS.Mail}</div>
-                <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-brand dark:hover:text-highlight transition-colors">
+              <li className="flex items-center gap-4 text-slate-600 dark:text-slate-300 font-semibold">
+                <div className="text-brand dark:text-brand">{ICONS.Mail}</div>
+                <a href={`mailto:${CONTACT_INFO.email}`} className="text-slate-600 dark:text-slate-300 hover:text-brand dark:hover:text-highlight transition-colors">
                   {CONTACT_INFO.email}
                 </a>
               </li>
               <li className="mt-6 flex flex-col gap-1">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-highlight rounded-full animate-pulse" />
-                  <span className="text-[10px] font-black uppercase text-brand/60 dark:text-[#19477b]/60 tracking-widest">
+                  <Clock size={12} className="text-brand dark:text-brand" />
+                  <span className="text-[10px] font-black uppercase text-slate-600/70 dark:text-slate-300/70 tracking-widest">
                     Ouvert : {CONTACT_INFO.hours.display}
                   </span>
                 </div>
-                <span className="text-[10px] font-black uppercase text-brand/60 dark:text-[#19477b]/60 tracking-widest ml-4">
+                <span className="text-[10px] font-black uppercase text-slate-600/70 dark:text-slate-300/70 tracking-widest ml-8">
                   {CONTACT_INFO.hours.days}
                 </span>
               </li>
@@ -106,8 +107,8 @@ export default function Footer() {
         </div>
 
         <div className="pt-12 border-t border-brand/10 flex items-center justify-center">
-          <p className="text-slate-500 dark:text-slate-500 text-sm font-bold">
-            © {new Date().getFullYear()} {APP_NAME}. <span className="text-brand/50 dark:text-[#19477b]/50">L'éclat durable à Meknès.</span>
+          <p className="text-slate-600 dark:text-slate-300 text-sm font-bold">
+            © {new Date().getFullYear()} {APP_NAME}. <span className="text-slate-600/70 dark:text-slate-300/70">L'éclat durable à Meknès.</span>
           </p>
         </div>
       </div>

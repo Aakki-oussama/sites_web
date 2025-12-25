@@ -65,6 +65,7 @@
     --color-highlight: var(--highlight);
     --color-light: var(--light);
     --color-dark-bg: var(--dark-bg);
+    --color-brand-static: var(--brand-static);
 }
 
 :root {
@@ -107,6 +108,7 @@
     --highlight: #28a7da;    /* Highlight/accent color (cyan blue) - was accent */
     --light: #EEEEEE;        /* Light/neutral color - was secondary */
     --dark-bg: #0f172a;      /* Dark background color - was dark */
+    --brand-static: #19477b;  /* Static brand color - never changes in dark mode, used for consistent header/footer colors */
 }
 
 .dark {
@@ -148,6 +150,7 @@
     --highlight: #3bb3e8;    /* Lighter highlight for dark mode */
     --light: #EEEEEE;       /* Light color stays same in dark mode */
     --dark-bg: #0f172a;     /* Dark background stays same in dark mode */
+    --brand-static: #19477b; /* Static brand color - never changes in dark mode, used for consistent header/footer colors */
 }
 
 @layer base {

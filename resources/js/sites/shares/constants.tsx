@@ -1,5 +1,5 @@
 import React from 'react';
-import { WashingMachine, Droplets, Wind, Truck, Sparkles, MapPin, Phone, Instagram, Facebook, MessageCircle, Mail } from 'lucide-react';
+import { WashingMachine, Droplets, Wind, Truck, Sparkles, MapPin, Phone, Instagram, Facebook, MessageCircle, Mail, Clock } from 'lucide-react';
 
 export const APP_NAME = "Ecolaundry";
 export const LOCATION = "Meknès, Maroc";
@@ -50,7 +50,8 @@ export const CONTACT_ICONS: Record<string, React.ReactNode> = {
   MapPin: <MapPin size={24} />,
   Phone: <Phone size={24} />,
   Mail: <Mail size={24} />,
-  WhatsApp: <MessageCircle size={24} />
+  WhatsApp: <MessageCircle size={24} />,
+  Clock: <Clock size={24} />
 };
 
 // Service/Content Icons (for center sections)
