@@ -44,7 +44,7 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-slate-600 hover:text-brand font-medium transition-colors"
+                className="text-slate-600 dark:text-slate-300 hover:text-brand dark:hover:text-highlight font-medium transition-colors"
               >
                 {link.name}
               </a>
@@ -60,7 +60,7 @@ export default function Header() {
               <span>Connexion</span>
             </button>
             <button 
-              className="lg:hidden p-2 text-slate-600"
+              className="lg:hidden p-2 text-slate-600 dark:text-slate-300"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
@@ -77,7 +77,7 @@ export default function Header() {
       }`}>
         {/* Close Button */}
         <button 
-          className="absolute top-6 right-6 p-2 text-slate-600 hover:text-brand transition-colors"
+          className="absolute top-6 right-6 p-2 text-slate-600 dark:text-slate-300 hover:text-brand dark:hover:text-highlight transition-colors"
           onClick={() => setIsOpen(false)}
           aria-label="Close menu"
         >
