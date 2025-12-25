@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Head } from '@inertiajs/react';
 import { AnimatePresence } from 'framer-motion';
 import Header from '@/sites/shares/Header';
+import Footer from '@/sites/shares/Footer';
 
 
 export default function Welcome() {
@@ -37,7 +38,8 @@ export default function Welcome() {
                     <main className="min-h-screen">
                         {/* Your page content goes here */}
                     </main>
-                    
+                    {/* Site Footer */}
+                    <Footer />
                 </>
             )}
         </>
