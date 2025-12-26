@@ -3,6 +3,7 @@ import Header from '@/sites/shares/Header';
 import Footer from '@/sites/shares/Footer';
 import Hero from '@/sites/unique/hero/Hero';
 import Services from '@/sites/unique/service/Service';
+import Timeline from '@/sites/unique/timeline/Timeline';
 
 export default function Welcome() {
     return (
@@ -17,6 +18,7 @@ export default function Welcome() {
                 {/* Your page content goes here */}
                 <Hero />
                 <Services />
+                <Timeline />
             </main>
             {/* Site Footer */}
             <Footer />

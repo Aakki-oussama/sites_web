@@ -68,7 +68,7 @@ export default function Services() {
               <div className={`p-10 flex flex-col justify-between ${index === 0 ? 'lg:w-1/2' : 'flex-1'}`}>
                 <div>
                   <div 
-                    className="w-14 h-14 bg-brand/5 dark:bg-highlight/10 rounded-2xl flex items-center justify-center text-brand dark:text-highlight mb-8 lg:group-hover:scale-110 lg:group-hover:bg-brand lg:group-hover:text-white transition-all duration-500"
+                    className="w-14 h-14 bg-brand/5 dark:bg-highlight/10 rounded-2xl flex items-center justify-center text-brand dark:text-highlight mb-8 lg:group-hover:scale-110 lg:group-hover:bg-brand lg:group-hover:text-white dark:lg:group-hover:bg-highlight dark:lg:group-hover:text-dark-bg transition-all duration-500"
                     aria-hidden="true"
                   >
                     {ICONS[service.iconName]}
@@ -105,7 +105,7 @@ export default function Services() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-highlight/20 blur-lg lg:blur-[80px] rounded-full" />
           <div className="relative z-10">
-            <h4 className="text-3xl font-black mb-2">Vous avez un article volumineux ?</h4>
+            <h3 className="text-3xl font-black mb-2">Vous avez un article volumineux ?</h3>
             <p className="text-white text-lg opacity-80">Couettes, tapis de luxe, ou rideaux — nous avons l'équipement adapté.</p>
           </div>
           <Button 

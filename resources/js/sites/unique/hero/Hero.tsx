@@ -35,7 +35,7 @@ export default function Hero() {
               <span className="text-brand dark:text-white">au kilo.</span>
             </h1>
 
-            <p className="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-lg leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-lg md:max-w-2xl leading-relaxed font-medium">
                Lavage au kilo, soin professionnel du linge et livraison à domicile.
             Une solution simple, fiable et écologique pour des vêtements propres, frais et parfaitement entretenus.
               <span className="block mt-4 font-bold text-brand dark:text-highlight">À partir de 15 DH / kg</span>
@@ -74,7 +74,7 @@ export default function Hero() {
                 src="/images/avif/hero.avif" 
                 alt="Ecolaundry Meknes" 
                 fetchPriority="high"
-                className="w-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700"
+                className="w-full object-cover aspect-[4/5] md:max-h-[450px] lg:max-h-none hover:scale-105 transition-transform duration-700"
               />
             </div>
             
