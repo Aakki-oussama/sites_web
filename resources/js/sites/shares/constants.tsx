@@ -1,5 +1,5 @@
-import React from 'react';
-import { WashingMachine, Droplets, Wind, Truck, Sparkles, MapPin, Phone, Instagram, Facebook, MessageCircle, Mail, Clock } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { WashingMachine, Droplets, Wind, Truck, Sparkles, MapPin, Phone, Instagram, Facebook, MessageCircle, Mail, Clock, Bed, ShieldCheck } from 'lucide-react';
 
 export const APP_NAME = "Ecolaundry";
 export const LOCATION = "Meknès, Maroc";
@@ -39,14 +39,14 @@ export const NAV_LINKS = [
 ];
 
 // Social Media Icons
-export const SOCIAL_ICONS: Record<string, React.ReactNode> = {
+export const SOCIAL_ICONS: Record<string, ReactNode> = {
   Facebook: <Facebook size={24} />,
   Instagram: <Instagram size={24} />,
   WhatsApp: <MessageCircle size={24} />
 };
 
 // Contact Icons
-export const CONTACT_ICONS: Record<string, React.ReactNode> = {
+export const CONTACT_ICONS: Record<string, ReactNode> = {
   MapPin: <MapPin size={24} />,
   Phone: <Phone size={24} />,
   Mail: <Mail size={24} />,
@@ -55,16 +55,18 @@ export const CONTACT_ICONS: Record<string, React.ReactNode> = {
 };
 
 // Service/Content Icons (for center sections)
-export const SERVICE_ICONS: Record<string, React.ReactNode> = {
+export const SERVICE_ICONS: Record<string, ReactNode> = {
   WashingMachine: <WashingMachine size={24} />,
   Droplets: <Droplets size={24} />,
   Wind: <Wind size={24} />,
   Truck: <Truck size={24} />,
-  Sparkles: <Sparkles size={24} />
+  Sparkles: <Sparkles size={24} />,
+  Bed: <Bed size={24} />,
+  ShieldCheck: <ShieldCheck size={24} />
 };
 
 // All Icons (for backward compatibility)
-export const ICONS: Record<string, React.ReactNode> = {
+export const ICONS: Record<string, ReactNode> = {
   ...SOCIAL_ICONS,
   ...CONTACT_ICONS,
   ...SERVICE_ICONS
