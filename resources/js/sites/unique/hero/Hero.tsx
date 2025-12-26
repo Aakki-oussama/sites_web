@@ -68,7 +68,7 @@ export default function Hero() {
           <div className="relative">
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-brand/10 border-4 border-white/20">
               <img 
-                src="/images/webp/hero.webp" 
+                src="/images/avif/hero.avif" 
                 alt="Ecolaundry Meknes" 
                 fetchPriority="high"
                 className="w-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700"

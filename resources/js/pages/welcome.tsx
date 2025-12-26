@@ -2,6 +2,7 @@ import { Head } from '@inertiajs/react';
 import Header from '@/sites/shares/Header';
 import Footer from '@/sites/shares/Footer';
 import Hero from '@/sites/unique/hero/Hero';
+import Services from '@/sites/unique/service/Service';
 
 export default function Welcome() {
     return (
@@ -15,6 +16,7 @@ export default function Welcome() {
             <main className="min-h-screen">
                 {/* Your page content goes here */}
                 <Hero />
+                <Services />
             </main>
             {/* Site Footer */}
             <Footer />
