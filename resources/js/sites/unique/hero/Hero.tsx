@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, Truck } from 'lucide-react';
 import { HERO_FEATURES } from '@/sites/unique/hero/constants';
+import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   return (
@@ -41,18 +42,20 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                className="bg-brand text-light dark:text-brand-static px-8 py-4 rounded-2xl font-bold text-lg hover:bg-highlight transition-all shadow-xl shadow-brand/20"
+              <Button 
+                variant="brand"
+                size="site-md"
                 aria-label="Bouton de commande - Fonctionnalité à venir"
               >
                 Empty
-              </button>
-              <a 
-                href="#services"
-                className="flex items-center justify-center px-8 py-4 rounded-2xl font-bold text-lg text-brand bg-light dark:text-brand-static hover:bg-white transition-all border border-brand/10 shadow-sm"
+              </Button>
+              <Button 
+                asChild
+                variant="brand-outline"
+                size="site-md"
               >
-                Nos Tarifs
-              </a>
+                <a href="#services">Nos Tarifs</a>
+              </Button>
             </div>
 
             <ul className="mt-12 flex flex-wrap gap-6 items-center" aria-label="Avantages du service">
@@ -91,8 +94,6 @@ export default function Hero() {
               </div>
               <p className="text-slate-600 dark:text-slate-300 text-sm">Nous arrivons chez vous en moins de 60 minutes à Meknès.</p>
             </article>
-
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand/20 rounded-full blur-lg lg:blur-2xl animate-pulse" />
           </div>
         </div>
       </div>

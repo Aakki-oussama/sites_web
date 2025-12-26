@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { SERVICES, SERVICE_IMAGES } from '@/sites/unique/service/Constant';
 import { ICONS } from '@/sites/shares/constants';
 import CategoryBadge from '@/sites/unique/service/CategoryBadge';
+import { Button } from '@/components/ui/button';
 
 export default function Services() {
   return (
@@ -107,12 +108,14 @@ export default function Services() {
             <h4 className="text-3xl font-black mb-2">Vous avez un article volumineux ?</h4>
             <p className="text-white text-lg opacity-80">Couettes, tapis de luxe, ou rideaux — nous avons l'équipement adapté.</p>
           </div>
-          <button 
-            className="relative z-10 px-10 py-5 bg-highlight text-white rounded-2xl font-black text-lg hover:bg-white hover:text-brand transition-all shadow-xl shadow-black/20 shrink-0"
+          <Button 
+            variant="highlight"
+            size="site-lg"
+            className="relative z-10 shrink-0 font-black"
             aria-label="Demander un devis gratuit pour articles volumineux"
           >
             Demander un devis gratuit
-          </button>
+          </Button>
         </motion.div>
       </div>
     </section>

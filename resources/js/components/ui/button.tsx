@@ -9,6 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        // ===== Original variants (for auth/settings) =====
         default:
           "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
         destructive:
@@ -19,12 +20,22 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        
+        // ===== Site web variants (using brand, highlight, light, dark-bg, brand-static) =====
+        brand: "rounded-2xl font-blod bg-brand text-light dark:text-dark-bg hover:bg-highlight transition-all shadow-xl shadow-brand/20",
+        "brand-outline": "rounded-2xl font-bold text-brand bg-light dark:text-brand-static hover:bg-white transition-all border border-brand/10 shadow-sm",
+        highlight: "rounded-2xl font-bold bg-highlight text-white hover:bg-white hover:text-brand transition-all shadow-xl shadow-black/20",
       },
       size: {
+        // ===== Original sizes (for auth/settings) =====
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 rounded-md px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
+        
+        // ===== Site web sizes =====
+        "site-md": "px-8 py-4 text-lg",
+        "site-lg": "px-10 py-5 text-lg",
       },
     },
     defaultVariants: {
