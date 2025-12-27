@@ -9,8 +9,7 @@ export default function Services() {
     <section id="services" className="py-16 bg-light dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative">
       {/* Decorative Background Accents */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand/10 to-transparent" />
-      <div className="absolute -left-20 top-1/4 w-96 h-96 bg-brand/5 rounded-full blur-xl lg:blur-[100px] pointer-events-none" />
-      <div className="absolute -right-20 bottom-1/4 w-96 h-96 bg-highlight/5 rounded-full blur-xl lg:blur-[100px] pointer-events-none" />
+      <div className="absolute -right-20 bottom-1/4 w-96 h-96 bg-highlight/10 rounded-full blur-xl lg:blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
@@ -103,8 +102,7 @@ export default function Services() {
           viewport={{ once: true }}
           className="mt-16 p-10 rounded-[3rem] bg-brand text-white flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-highlight/20 blur-lg lg:blur-[80px] rounded-full" />
-          <div className="relative z-10">
+          <div>
             <h3 className="text-2xl md:text-[28px] lg:text-3xl font-black mb-2">Vous avez un article volumineux ?</h3>
             <p className="text-white text-base md:text-lg lg:text-xl opacity-80">Couettes, tapis de luxe, ou rideaux — nous avons l'équipement adapté.</p>
           </div>

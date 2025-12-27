@@ -6,10 +6,6 @@ import { Button } from '@/components/ui/button';
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden bg-light dark:bg-dark-bg">
-      {/* Dynamic Brand Background Elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand/5 -z-10 asymmetric-clip" />
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-highlight/10 rounded-full blur-xl lg:blur-3xl -z-10" />
-
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div 
