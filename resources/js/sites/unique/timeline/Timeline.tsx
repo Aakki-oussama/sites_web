@@ -81,24 +81,13 @@ export default function Timeline() {
                     {step.description}
                   </p>
                 </div>
-
-                {/* Decorative Arrow for Desktop */}
-                {index < STEPS.length - 1 && (
-                  <div className="hidden lg:flex absolute top-9 -right-4 text-slate-200 dark:text-white/10" aria-hidden="true">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-                  </div>
-                )}
               </motion.div>
             ))}
           </div>
         </div>
 
         {/* Bottom Metrics/Trust Badges */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          style={{ willChange: 'transform' }}
+        <div
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 px-8 bg-brand/5 dark:bg-white/5 rounded-[3rem] border border-brand/10 dark:border-white/10"
           role="region"
           aria-label="Statistiques de performance"
@@ -109,7 +98,7 @@ export default function Timeline() {
               <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">{metric.label}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

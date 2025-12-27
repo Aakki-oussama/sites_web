@@ -33,5 +33,5 @@ export const METRICS: Metric[] = [
   { label: "Clients Heureux", value: "785+" },
   { label: "Linge Traité", value: "15T+" },
   { label: "Articles Express", value: "48h" },
-  { label: "Satisfaction", value: "99%" },
+  { label: "Satisfaction", value: "98%" },
 ];

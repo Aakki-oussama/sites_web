@@ -5,11 +5,11 @@ import Hero from '@/sites/unique/hero/Hero';
 import Services from '@/sites/unique/service/Service';
 import Timeline from '@/sites/unique/timeline/Timeline';
 import Whyus from '@/sites/unique/whyus/Whyus';
-
+import Gallery from '@/sites/unique/galery/Galerie';
 export default function Welcome() {
     return (
         <>
-            <Head title="EcoLaundry" />
+            <Head title="Welcome" />
 
             {/* Site Header */}
             <Header />
@@ -21,6 +21,7 @@ export default function Welcome() {
                 <Services />
                 <Timeline />
                 <Whyus />
+                <Gallery />
             </main>
             {/* Site Footer */}
             <Footer />
