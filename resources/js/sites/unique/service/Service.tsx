@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 bg-light dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative">
+    <section id="services" className="py-16 bg-light dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative">
       {/* Decorative Background Accents */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand/10 to-transparent" />
       <div className="absolute -left-20 top-1/4 w-96 h-96 bg-brand/5 rounded-full blur-xl lg:blur-[100px] pointer-events-none" />
@@ -27,12 +27,12 @@ export default function Services() {
             </div>
             <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-tight">
               Soin Textile <br />
-              <span className="text-highlight italic font-light">Haute Couture.</span>
+              <span className="text-highlight italic font-light"> Haute Couture.</span>
             </h2>
           </motion.div>
           
           <div className="lg:max-w-md">
-            <p className="text-slate-600 dark:text-slate-400 font-medium text-lg leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed">
               Nous traitons chaque article comme une pièce d'exception. Notre processus combine technologie de pointe et savoir-faire artisanal à Meknès.
             </p>
           </div>
@@ -73,10 +73,10 @@ export default function Services() {
                   >
                     {ICONS[service.iconName]}
                   </div>
-                  <h3 className="text-3xl font-black text-brand dark:text-white mb-4 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-black text-brand dark:text-white mb-4 leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-8">
+                  <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base font-medium leading-relaxed mb-8">
                     {service.description}
                   </p>
                 </div>
@@ -101,12 +101,12 @@ export default function Services() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-20 p-10 rounded-[3rem] bg-brand text-white flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden"
+          className="mt-16 p-10 rounded-[3rem] bg-brand text-white flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-highlight/20 blur-lg lg:blur-[80px] rounded-full" />
           <div className="relative z-10">
-            <h3 className="text-3xl font-black mb-2">Vous avez un article volumineux ?</h3>
-            <p className="text-white text-lg opacity-80">Couettes, tapis de luxe, ou rideaux — nous avons l'équipement adapté.</p>
+            <h3 className="text-2xl md:text-[28px] lg:text-3xl font-black mb-2">Vous avez un article volumineux ?</h3>
+            <p className="text-white text-base md:text-lg lg:text-xl opacity-80">Couettes, tapis de luxe, ou rideaux — nous avons l'équipement adapté.</p>
           </div>
           <Button 
             variant="highlight"

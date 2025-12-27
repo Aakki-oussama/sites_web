@@ -5,7 +5,7 @@ import { ICONS } from '@/sites/shares/constants';
 
 export default function Timeline() {
   return (
-    <section id="process" className="py-32 bg-white dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative border-y border-slate-100 dark:border-white/5">
+    <section id="process" className="py-16 bg-white dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative border-y border-slate-100 dark:border-white/5">
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-brand/5 dark:bg-highlight/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
 
@@ -16,10 +16,10 @@ export default function Timeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-6xl font-black text-brand dark:text-white mb-6">
+            <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white mb-6">
               Un processus <span className="text-highlight italic">maîtrisé.</span>
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-lg font-medium leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg lg:text-xl font-medium leading-relaxed">
               De la collecte à la livraison, nous veillons sur chaque fibre avec une attention particulière.
             </p>
           </motion.div>
@@ -74,10 +74,10 @@ export default function Timeline() {
 
                 {/* Content Card */}
                 <div className="lg:pr-4">
-                  <h3 className="text-2xl font-black text-brand dark:text-white mb-4 transition-colors group-hover:text-highlight dark:group-hover:text-highlight">
+                  <h3 className="text-2xl md:text-3xl font-black text-brand dark:text-white mb-4 transition-colors group-hover:text-highlight dark:group-hover:text-highlight">
                     {step.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base font-medium leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -99,7 +99,7 @@ export default function Timeline() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           style={{ willChange: 'transform' }}
-          className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 px-8 bg-brand/5 dark:bg-white/5 rounded-[3rem] border border-brand/10 dark:border-white/10"
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 px-8 bg-brand/5 dark:bg-white/5 rounded-[3rem] border border-brand/10 dark:border-white/10"
           role="region"
           aria-label="Statistiques de performance"
         >
