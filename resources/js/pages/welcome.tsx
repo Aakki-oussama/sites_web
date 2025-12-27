@@ -4,6 +4,7 @@ import Footer from '@/sites/shares/Footer';
 import Hero from '@/sites/unique/hero/Hero';
 import Services from '@/sites/unique/service/Service';
 import Timeline from '@/sites/unique/timeline/Timeline';
+import Whyus from '@/sites/unique/whyus/Whyus';
 
 export default function Welcome() {
     return (
@@ -19,6 +20,7 @@ export default function Welcome() {
                 <Hero />
                 <Services />
                 <Timeline />
+                <Whyus />
             </main>
             {/* Site Footer */}
             <Footer />
