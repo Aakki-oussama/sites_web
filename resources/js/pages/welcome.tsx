@@ -6,6 +6,7 @@ import Services from '@/sites/unique/service/Service';
 import Timeline from '@/sites/unique/timeline/Timeline';
 import Whyus from '@/sites/unique/whyus/Whyus';
 import Gallery from '@/sites/unique/galery/Galerie';
+import Contact from '@/sites/unique/contact/Contacter';
 export default function Welcome() {
     return (
         <>
@@ -22,6 +23,7 @@ export default function Welcome() {
                 <Timeline />
                 <Whyus />
                 <Gallery />
+                <Contact />
             </main>
             {/* Site Footer */}
             <Footer />

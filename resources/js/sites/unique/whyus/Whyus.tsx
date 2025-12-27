@@ -17,7 +17,7 @@ export default function WhyUs() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand/5 dark:bg-highlight/10 rounded-full border border-brand/10 dark:border-highlight/20 mb-8">
                 <Trophy size={16} className="text-highlight" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand dark:text-slate-300">Leader à Meknès</span>
+                <span className="text-xs font-black uppercase tracking-[0.2em] text-brand dark:text-slate-300">Leader à Meknès</span>
               </div>
               
               <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-[1.1] mb-8">
@@ -31,12 +31,12 @@ export default function WhyUs() {
 
               <div className="grid grid-cols-2 gap-8">
                 <div className="p-6 rounded-3xl bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-sm">
-                  <div className="text-3xl font-black text-brand dark:text-highlight mb-1">98%</div>
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Satisfaction</div>
+                  <div className="text-3xl lg:text-4xl font-black text-brand dark:text-highlight mb-1">98%</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-slate-400">Satisfaction</div>
                 </div>
                 <div className="p-6 rounded-3xl bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 shadow-sm">
-                  <div className="text-3xl font-black text-brand dark:text-highlight mb-1">15k+</div>
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Articles Traités</div>
+                  <div className="text-3xl lg:text-4xl font-black text-brand dark:text-highlight mb-1">15k+</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-slate-400">Articles Traités</div>
                 </div>
               </div>
             </motion.div>
@@ -63,11 +63,11 @@ export default function WhyUs() {
                   {reason.icon}
                 </div>
 
-                <h3 className="text-2xl font-black text-brand dark:text-white mb-4">
+                <h3 className="text-2xl md:text-3xl font-black text-brand dark:text-white mb-4">
                   {reason.title}
                 </h3>
                 
-                <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base font-medium leading-relaxed">
                   {reason.description}
                 </p>
 
@@ -87,7 +87,7 @@ export default function WhyUs() {
                 <Heart className="w-10 h-10 fill-white dark:group-hover:fill-brand" />
               </div>
               <div>
-                <h4 className="text-2xl font-black mb-2">Un service avec du cœur</h4>
+                <h4 className="text-2xl md:text-3xl font-black mb-2">Un service avec du cœur</h4>
                 <p className="text-brand-light/80 font-medium opacity-80">
                   Parce que vos vêtements font partie de votre histoire, nous les traitons avec le respect qu'ils méritent.
                 </p>

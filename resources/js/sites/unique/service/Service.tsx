@@ -26,7 +26,7 @@ export default function Services() {
             </div>
             <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-tight">
               Soin Textile <br />
-              <span className="text-highlight italic font-light"> Haute Couture.</span>
+              <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8"> Haute Couture.</span>
             </h2>
           </motion.div>
           
@@ -103,7 +103,7 @@ export default function Services() {
           className="mt-16 p-10 rounded-[3rem] bg-brand text-white flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden"
         >
           <div>
-            <h3 className="text-2xl md:text-[28px] lg:text-3xl font-black mb-2">Vous avez un article volumineux ?</h3>
+            <h3 className="text-2xl md:text-3xl font-black mb-2">Vous avez un article volumineux ?</h3>
             <p className="text-white text-base md:text-lg lg:text-xl opacity-80">Couettes, tapis de luxe, ou rideaux — nous avons l'équipement adapté.</p>
           </div>
           <Button 

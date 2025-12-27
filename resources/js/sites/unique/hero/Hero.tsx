@@ -26,12 +26,12 @@ export default function Hero() {
               </span>
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-brand leading-[1.1] mb-8">
+            <h1 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-[1.1] mb-8">
             Service de blanchisserie, <br />
-              <span className="text-brand dark:text-white">au kilo.</span>
+              <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8">au kilo.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-lg md:max-w-2xl leading-relaxed font-medium">
+            <p className="text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg md:max-w-2xl leading-relaxed font-medium">
                Lavage au kilo, soin professionnel du linge et livraison à domicile.
             Une solution simple, fiable et écologique pour des vêtements propres, frais et parfaitement entretenus.
               <span className="block mt-4 font-bold text-brand dark:text-highlight">À partir de 15 DH / kg</span>
@@ -85,7 +85,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="text-slate-600 dark:text-slate-300 text-xs font-bold uppercase">Collecte Express</p>
-                  <p className="text-brand dark:text-white font-extrabold text-xl">Disponible</p>
+                  <p className="text-brand dark:text-white font-black text-xl">Disponible</p>
                 </div>
               </div>
               <p className="text-slate-600 dark:text-slate-300 text-sm">Nous arrivons chez vous en moins de 60 minutes à Meknès.</p>

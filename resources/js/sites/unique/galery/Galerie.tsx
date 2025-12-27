@@ -39,14 +39,14 @@ const GalleryCard = ({ item, index }: { item: GalleryItem; index: number }) => {
           <p className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-1">
             {item.category}
           </p>
-          <h3 className="text-white text-xl md:text-2xl font-black">{item.title}</h3>
+          <h3 className="text-white text-2xl md:text-3xl font-black">{item.title}</h3>
         </div>
       </div>
 
       {/* Static Label Below (For accessibility and always-on branding) */}
       <div className="mt-5 px-3 md:px-4 flex justify-between items-start">
         <div>
-          <h4 className="font-extrabold text-brand dark:text-white text-2xl md:text-3xl tracking-tight group-hover:text-highlight transition-colors duration-300">
+          <h4 className="font-black text-brand dark:text-white text-2xl md:text-3xl tracking-tight group-hover:text-highlight transition-colors duration-300">
             {item.title}
           </h4>
           <p className="text-slate-400 dark:text-slate-500 text-[10px] font-black uppercase tracking-widest mt-0.5">
@@ -81,12 +81,12 @@ export default function Gallery() {
               </div>
               <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-[0.9] tracking-tighter">
                 L'Excellence <br />
-                <span className="text-highlight italic">documentée.</span>
+                <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8">documentée.</span>
               </h2>
             </div>
             
-            <div className="max-w-[300px]">
-              <p className="text-slate-500 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed mb-6">
+            <div className="lg:max-w-md">
+              <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed">
                 Chaque textile est une pièce d'histoire. Découvrez comment nous préservons l'éclat de vos articles les plus précieux.
               </p>
               <div className="flex items-center gap-2">
@@ -109,7 +109,7 @@ export default function Gallery() {
           {GALLERY_STATS.map((stat) => (
             <div key={stat.label} className="text-center">
               <span className="block text-3xl lg:text-4xl font-black text-brand dark:text-brand tracking-tighter mb-1">{stat.value}</span>
-              <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em]">{stat.label}</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">{stat.label}</span>
             </div>
           ))}
         </div>
