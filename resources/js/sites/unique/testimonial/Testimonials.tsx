@@ -29,7 +29,11 @@ export default function Testimonials() {
   const current = TESTIMONIALS[activeIndex];
 
   return (
-    <section id="testimonials" className="py-16 bg-light dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative">
+    <section 
+      id="testimonials" 
+      className="py-16 bg-light dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative"
+      aria-label="Témoignages clients"
+    >
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           
@@ -40,8 +44,8 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-6 h-[2px] bg-highlight rounded-full" />
+              <div className="flex items-center gap-2 mb-4" aria-label="Badge Confiance & Proximité">
+                <span className="w-6 h-[2px] bg-highlight rounded-full" aria-hidden="true" />
                 <span className="text-highlight font-black text-xs uppercase tracking-[0.3em]">Confiance & Proximité</span>
               </div>
               <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-tight mb-8">
@@ -84,10 +88,14 @@ export default function Testimonials() {
                   }}
                   className="w-full"
                 >
-                  <div className="bg-slate-50 dark:bg-white/5 p-6 md:p-8 rounded-[2.5rem] border border-slate-100 dark:border-white/5 relative h-full">
+                  <div 
+                    className="bg-white dark:bg-white/5 p-6 md:p-8 rounded-[2.5rem] border border-slate-100 dark:border-white/5 relative h-full"
+                    role="article"
+                    aria-label={`Témoignage de ${current.name}, ${current.role}`}
+                  >
                     <Quote className="text-highlight/20 w-10 h-10 mb-6" aria-hidden="true" />
                     
-                    <div className="flex items-center gap-1 mb-6">
+                    <div className="flex items-center gap-1 mb-6" role="img" aria-label={`Note: ${current.rating} sur 5 étoiles`}>
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
@@ -98,35 +106,20 @@ export default function Testimonials() {
                       ))}
                     </div>
 
-                    <p className="text-xl md:text-2xl font-medium text-slate-600 dark:text-slate-400 leading-snug mb-8 tracking-tight italic">
+                    <blockquote className="text-xl md:text-2xl font-medium text-slate-600 dark:text-slate-400 leading-snug mb-8 tracking-tight italic">
                       "{current.content}"
-                    </p>
+                    </blockquote>
 
                     <div className="border-t border-slate-200 dark:border-white/5 pt-6">
-                      <h4 className="text-xl md:text-2xl font-black text-brand dark:text-white mb-2 leading-tight">{current.name}</h4>
-                      <p className="text-slate-400 dark:text-slate-500 text-xs font-black uppercase tracking-widest">{current.role}</p>
+                      <h3 className="text-xl md:text-2xl font-black text-brand dark:text-white mb-2 leading-tight">{current.name}</h3>
+                      <p className="text-slate-600 dark:text-slate-200 text-xs font-black uppercase tracking-widest">{current.role}</p>
                     </div>
                   </div>
                 </motion.div>
               </AnimatePresence>
 
               {/* Slider Controls */}
-              <div className="mt-12 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  {TESTIMONIALS.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => goTo(i)}
-                      className={`h-1.5 rounded-full transition-all duration-500 ${
-                        i === activeIndex 
-                          ? 'w-10 bg-brand dark:bg-highlight' 
-                          : 'w-3 bg-slate-100 dark:bg-white/5'
-                      }`}
-                      aria-label={`Témoignage ${i + 1}`}
-                    />
-                  ))}
-                </div>
-
+              <div className="mt-12 flex items-center justify-end">
                 <div className="flex items-center gap-3">
                   <button 
                     onClick={prev}

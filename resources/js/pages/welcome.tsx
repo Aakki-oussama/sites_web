@@ -8,6 +8,7 @@ import Whyus from '@/sites/unique/whyus/Whyus';
 import Gallery from '@/sites/unique/galery/Galerie';
 import Contact from '@/sites/unique/contact/Contacter';
 import Testimonials from '@/sites/unique/testimonial/Testimonials';
+import FAQ from '@/sites/unique/faq/Faq';
 
 export default function Welcome() {
     return (
@@ -27,6 +28,7 @@ export default function Welcome() {
                 <Gallery />
                 <Contact />
                 <Testimonials />
+                <FAQ />
             </main>
             {/* Site Footer */}
             <Footer />

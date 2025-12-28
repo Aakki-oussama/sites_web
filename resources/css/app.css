@@ -66,6 +66,7 @@
     --color-light: var(--light);
     --color-dark-bg: var(--dark-bg);
     --color-brand-static: var(--brand-static);
+    --color-heoro: var(--heoro);
 }
 
 :root {
@@ -104,7 +105,8 @@
     --sidebar-ring: oklch(0.87 0 0);
 
     /* Brand colors - for site header components */
-    --brand: #19477b;        /* Primary brand color (dark blue) - was primary */
+    --brand: #19477b; 
+    --heoro:#2690BA;      /* just for hero h1 titel for accebility okey*/
     --highlight: #28a7da;    /* Highlight/accent color (cyan blue) - was accent */
     --light: #EEEEEE;        /* Light/neutral color - was secondary */
     --dark-bg: #0f172a;      /* Dark background color - was dark */

@@ -28,7 +28,7 @@ export default function Hero() {
             
             <h1 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-[1.1] mb-8">
             Service de blanchisserie, <br />
-              <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8">au kilo.</span>
+              <span className="text-heoro italic font-light underline decoration-highlight underline-offset-8">au kilo.</span>
             </h1>
 
             <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed mb-10 max-w-lg md:max-w-2xl">

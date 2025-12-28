@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-light dark:bg-dark-bg pt-24 pb-12 border-t border-brand/10">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-brand dark:bg-brand-static rounded-xl flex items-center justify-center text-light font-bold shadow-lg shadow-brand/20">

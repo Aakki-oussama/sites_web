@@ -95,7 +95,7 @@ export default function Timeline() {
           {METRICS.map((metric) => (
             <div key={metric.label} className="text-center">
               <p className="text-3xl lg:text-4xl font-black text-brand dark:text-highlight tracking-tighter mb-1">{metric.value}</p>
-              <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">{metric.label}</p>
+              <p className="text-[10px] font-black uppercase tracking-widest text-slate-800 dark:text-slate-400">{metric.label}</p>
             </div>
           ))}
         </div>

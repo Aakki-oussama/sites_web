@@ -109,7 +109,7 @@ export default function Gallery() {
           {GALLERY_STATS.map((stat) => (
             <div key={stat.label} className="text-center">
               <span className="block text-3xl lg:text-4xl font-black text-brand dark:text-brand tracking-tighter mb-1">{stat.value}</span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">{stat.label}</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-800 dark:text-slate-400">{stat.label}</span>
             </div>
           ))}
         </div>
