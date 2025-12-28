@@ -22,6 +22,9 @@ export const CONTACT_INFO = {
     facebook: "https://www.facebook.com/ecolaundrymeknes/",
     instagram: "https://www.instagram.com/eco_laundry22/"
   },
+  googleMaps: {
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.2195734442635!2d-5.5762441!3d33.8582317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda05b8259552bbd%3A0xac74b63a08f46e13!2zRWNvbGF1bmRyeSDZhdi12KjZhtmA2YDYqSDYqNin2YTZg9mK2YDZgNmE2Yg!5e0!3m2!1sfr!2sma!4v1766935946850!5m2!1sfr!2sma"
+  },
   hours: {
     open: "9:00",
     close: "21:00",

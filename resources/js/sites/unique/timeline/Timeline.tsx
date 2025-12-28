@@ -16,10 +16,10 @@ export default function Timeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white mb-6">
+            <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-tight mb-6">
               Un processus <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8">maîtrisé.</span>
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg lg:text-xl font-medium leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed">
               De la collecte à la livraison, nous veillons sur chaque fibre avec une attention particulière.
             </p>
           </motion.div>

@@ -31,7 +31,7 @@ export default function Hero() {
               <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8">au kilo.</span>
             </h1>
 
-            <p className="text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg md:max-w-2xl leading-relaxed font-medium">
+            <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed mb-10 max-w-lg md:max-w-2xl">
                Lavage au kilo, soin professionnel du linge et livraison à domicile.
             Une solution simple, fiable et écologique pour des vêtements propres, frais et parfaitement entretenus.
               <span className="block mt-4 font-bold text-brand dark:text-highlight">À partir de 15 DH / kg</span>

@@ -79,7 +79,7 @@ export default function Gallery() {
                 </div>
                 <span className="text-brand dark:text-highlight font-black text-xs uppercase tracking-[0.5em]">Work Archive</span>
               </div>
-              <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-[0.9] tracking-tighter">
+              <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-tight">
                 L'Excellence <br />
                 <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8">documentée.</span>
               </h2>

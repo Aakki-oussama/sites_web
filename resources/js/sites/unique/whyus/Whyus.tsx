@@ -20,7 +20,7 @@ export default function WhyUs() {
                 <span className="text-xs font-black uppercase tracking-[0.2em] text-brand dark:text-slate-300">Leader à Meknès</span>
               </div>
               
-              <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-[1.1] mb-8">
+              <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-tight mb-8">
                 L'excellence est dans le <br />
                 <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8">détail.</span>
               </h2>
