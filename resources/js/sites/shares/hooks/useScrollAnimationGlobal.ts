@@ -20,40 +20,49 @@ import { useEffect } from 'react';
  */
 export function useScrollAnimationGlobal() {
   useEffect(() => {
-    // Sélectionner tous les éléments avec la classe animate-fade-up-on-scroll
-    const elements = document.querySelectorAll('.animate-fade-up-on-scroll');
-    
-    // Si aucun élément, on ne fait rien
-    if (elements.length === 0) return;
+    let observer: IntersectionObserver | null = null;
 
-    // Créer un seul observer pour tous les éléments
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Si l'élément est visible dans le viewport
-          if (entry.isIntersecting) {
-            // Ajouter la classe 'visible' pour déclencher l'animation
-            entry.target.classList.add('visible');
-            
-            // Arrêter d'observer après la première animation (performance)
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1, // Déclenche quand 10% est visible
-        rootMargin: '0px', // Pas de marge
-      }
-    );
+    // Utiliser requestAnimationFrame pour éviter forced reflow
+    // Attend que le navigateur termine le rendu avant de lire le DOM
+    const rafId = requestAnimationFrame(() => {
+      // Sélectionner tous les éléments avec la classe animate-fade-up-on-scroll
+      const elements = document.querySelectorAll('.animate-fade-up-on-scroll');
+      
+      // Si aucun élément, on ne fait rien
+      if (elements.length === 0) return;
 
-    // Observer tous les éléments
-    elements.forEach((element) => {
-      observer.observe(element);
+      // Créer un seul observer pour tous les éléments
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // Si l'élément est visible dans le viewport
+            if (entry.isIntersecting) {
+              // Ajouter la classe 'visible' pour déclencher l'animation
+              entry.target.classList.add('visible');
+              
+              // Arrêter d'observer après la première animation (performance)
+              observer?.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Déclenche quand 10% est visible
+          rootMargin: '0px', // Pas de marge
+        }
+      );
+
+      // Observer tous les éléments
+      elements.forEach((element) => {
+        observer?.observe(element);
+      });
     });
 
-    // Nettoyage: Arrêter d'observer quand le composant est démonté
+    // Nettoyage: Arrêter d'observer et annuler le requestAnimationFrame
     return () => {
-      observer.disconnect();
+      cancelAnimationFrame(rafId);
+      if (observer) {
+        observer.disconnect();
+      }
     };
   }, []); // Seulement au montage du composant
 }

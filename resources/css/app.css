@@ -189,6 +189,7 @@
 /* Liquid animation class */
 .animate-liquid {
     animation: liquid 8s ease-in-out infinite;
+    will-change: border-radius; /* Optimise l'animation liquid pour réduire layout shift */
 }
 
 /* ============================================
@@ -211,6 +212,7 @@
 /* Classe pour Hero - Animation immédiate (se déclenche au chargement) */
 .animate-fade-left {
     animation: fade-left 0.8s ease-out forwards;
+    will-change: transform, opacity; /* Optimise les animations pour réduire layout shift */
 }
 
 /* Other Sections: Animation from left to right */
@@ -232,6 +234,7 @@
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: transform, opacity; /* Optimise les animations pour réduire layout shift */
 }
 
 /* Classe ajoutée par le hook JavaScript quand l'élément entre dans la vue */

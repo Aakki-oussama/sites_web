@@ -30,28 +30,32 @@ export default function Welcome() {
                 {isLoaderVisible && <Loader />}
             </AnimatePresence>
 
-            {/* Contenu affiché seulement après le Loader */}
-            {!isLoaderVisible && (
-                <>
-                    {/* Site Header */}
-                    <Header />
-                    
-                    {/* Main Content Area - Add your page content here */}
-                    <main className="min-h-screen">
-                        {/* Your page content goes here */}
-                        <Hero />
-                        <Services />
-                        <Timeline />
-                        <Whyus />
-                        <Gallery />
-                        <Contact />
-                        <Testimonials />
-                        <FAQ />
-                    </main>
-                    {/* Site Footer */}
-                    <Footer />
-                </>
-            )}
+            {/* Contenu toujours rendu mais invisible pendant le loader pour éviter layout shift */}
+            <div 
+                style={{ 
+                    opacity: isLoaderVisible ? 0 : 1, 
+                    transition: 'opacity 0.3s ease-out',
+                    pointerEvents: isLoaderVisible ? 'none' : 'auto'
+                }}
+            >
+                {/* Site Header */}
+                <Header />
+                
+                {/* Main Content Area - Add your page content here */}
+                <main className="min-h-screen">
+                    {/* Your page content goes here */}
+                    <Hero />
+                    <Services />
+                    <Timeline />
+                    <Whyus />
+                    <Gallery />
+                    <Contact />
+                    <Testimonials />
+                    <FAQ />
+                </main>
+                {/* Site Footer */}
+                <Footer />
+            </div>
         </>
     );
 }
