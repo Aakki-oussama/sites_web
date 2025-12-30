@@ -3,6 +3,7 @@ import { Send, CheckCheck, MoreHorizontal, Camera, Signal, Wifi, Battery } from 
 import { APP_NAME } from '@/sites/shares/constants';
 import { CONTACT_LINKS, SOCIAL_LINKS, CHAT_MESSAGES } from './constant';
 import type { ContactLink } from './index';
+import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
 
 const ContactLinkComponent = ({ icon: Icon, title, value, href, color }: ContactLink) => (
   <a 
@@ -23,6 +24,7 @@ const ContactLinkComponent = ({ icon: Icon, title, value, href, color }: Contact
 
 export default function Contact() {
   const currentTime = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+  const headerRef = useScrollAnimation();
 
   return (
     <section id="contact" className="py-16 bg-light dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative">
@@ -31,11 +33,9 @@ export default function Contact() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            style={{ willChange: 'transform' }}
+          <div
+            ref={headerRef as React.RefObject<HTMLDivElement>}
+            className="animate-fade-up-on-scroll"
           >
             <div className="flex items-center gap-3 mb-6">
               <span className="w-10 h-1 bg-highlight rounded-full" />
@@ -80,7 +80,7 @@ export default function Contact() {
                 })}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 50 }}

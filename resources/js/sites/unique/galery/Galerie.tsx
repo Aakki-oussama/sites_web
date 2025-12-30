@@ -3,6 +3,7 @@ import { Camera } from 'lucide-react';
 import type { GalleryItem } from './index';
 import { GALLERY_ITEMS, GALLERY_STATS } from './constant';
 import { useParallax } from './useParallax';
+import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
 
 const GalleryCard = ({ item, index }: { item: GalleryItem; index: number }) => {
   const { containerRef, springY } = useParallax();
@@ -59,18 +60,17 @@ const GalleryCard = ({ item, index }: { item: GalleryItem; index: number }) => {
 };
 
 export default function Gallery() {
+  const headerRef = useScrollAnimation();
+
   return (
     <section id="gallery" className="py-16 bg-white dark:bg-dark-bg transition-colors duration-500 overflow-hidden" role="region" aria-label="Galerie de nos réalisations">
       <div className="container mx-auto px-6">
         
         {/* Minimalist Header */}
         <div className="mb-20 md:mb-32">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            style={{ willChange: 'transform' }}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-12"
+          <div
+            ref={headerRef as React.RefObject<HTMLDivElement>}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-12 animate-fade-up-on-scroll"
           >
             <div className="max-w-2xl relative">
               <div className="flex items-center gap-3 mb-6">
@@ -94,7 +94,7 @@ export default function Gallery() {
                 <span className="text-[10px] font-black uppercase tracking-widest text-brand dark:text-highlight">Mise à jour aujourd'hui</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Dynamic Masonry Grid */}

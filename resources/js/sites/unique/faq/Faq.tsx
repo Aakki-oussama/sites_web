@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { Plus, Minus, HelpCircle, Heart } from 'lucide-react';
 import type { FAQ } from './index';
 import { FAQS } from './constant';
-import { CONTACT_INFO } from '@/sites/shares/constants';
 
 interface FAQItemProps {
   question: string;
@@ -59,9 +58,9 @@ export default function FAQ() {
       aria-label="Questions fréquemment posées"
     >
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
+        <div className="grid lg:grid-cols-12 gap-2 lg:gap-16 items-start">
           
-          <div className="lg:col-span-5 sticky top-32">
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -78,20 +77,6 @@ export default function FAQ() {
               <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed mb-12">
                 Tout ce que vous devez savoir sur nos services de blanchisserie premium à Meknès.
               </p>
-              
-              <div className="p-8 rounded-[2.5rem] bg-brand text-white shadow-2xl relative overflow-hidden">
-                <h3 className="text-2xl font-black mb-4">Besoin d'aide immédiate?</h3>
-                <p className="text-white/70 mb-8 font-medium">Notre support WhatsApp est ouvert 7j/7 pour vous assister.</p>
-                <a 
-                  href={CONTACT_INFO.whatsapp.url(CONTACT_INFO.whatsapp.number, CONTACT_INFO.whatsapp.message)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-4 bg-white text-brand rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-highlight hover:text-white transition-all text-center"
-                  aria-label="Ouvrir le chat WhatsApp"
-                >
-                  Ouvrir le chat
-                </a>
-              </div>
             </motion.div>
           </div>
 
@@ -101,6 +86,14 @@ export default function FAQ() {
             ))}
           </div>
 
+        </div>
+        
+        {/* Thank You Message - Centered */}
+        <div className="flex justify-center items-center gap-3 mt-12">
+          <Heart size={20} className="text-red-500 fill-red-500/20" />
+          <p className="text-brand dark:text-white font-medium italic text-base md:text-lg">
+            Merci de votre visite sur notre site web
+          </p>
         </div>
       </div>
     </section>

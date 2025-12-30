@@ -2,8 +2,11 @@
 import { motion } from 'framer-motion';
 import { STEPS, METRICS } from '@/sites/unique/timeline/constant';
 import { ICONS } from '@/sites/shares/constants';
+import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
 
 export default function Timeline() {
+  const headerRef = useScrollAnimation();
+
   return (
     <section id="process" className="py-16 bg-white dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative border-y border-slate-100 dark:border-white/5">
       {/* Background Decorative Element */}
@@ -11,10 +14,9 @@ export default function Timeline() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div
+            ref={headerRef as React.RefObject<HTMLDivElement>}
+            className="animate-fade-up-on-scroll"
           >
             <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-tight mb-6">
               Un processus <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8">maîtrisé.</span>
@@ -22,7 +24,7 @@ export default function Timeline() {
             <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed">
               De la collecte à la livraison, nous veillons sur chaque fibre avec une attention particulière.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* Horizontal Timeline Container */}

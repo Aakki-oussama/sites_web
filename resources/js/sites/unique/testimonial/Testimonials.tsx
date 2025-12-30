@@ -3,6 +3,7 @@ import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TESTIMONIALS } from './constant';
 import { useTestimonialSlider } from './useTestimonialSlider';
 import { CONTACT_INFO } from '@/sites/shares/constants';
+import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
 
 const variants = {
   enter: (direction: number) => ({
@@ -25,6 +26,7 @@ export default function Testimonials() {
   const { activeIndex, direction, next, prev, goTo } = useTestimonialSlider({ 
     totalItems: TESTIMONIALS.length 
   });
+  const headerRef = useScrollAnimation();
 
   const current = TESTIMONIALS[activeIndex];
 
@@ -39,10 +41,9 @@ export default function Testimonials() {
           
           {/* Left Side: Text and Map */}
           <div className="space-y-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <div
+              ref={headerRef as React.RefObject<HTMLDivElement>}
+              className="animate-fade-up-on-scroll"
             >
               <div className="flex items-center gap-2 mb-4" aria-label="Badge Confiance & Proximité">
                 <span className="w-6 h-[2px] bg-highlight rounded-full" aria-hidden="true" />
@@ -55,10 +56,10 @@ export default function Testimonials() {
               <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed">
                 Découvrez les avis de nos clients locaux et retrouvez-nous au cœur de la ville.
               </p>
-            </motion.div>
+            </div>
 
             {/* Google Maps */}
-            <div className="relative w-full overflow-hidden rounded-[2rem] shadow-xl aspect-video border border-slate-100 dark:border-white/10">
+            <div className="relative w-full overflow-hidden rounded-[2rem] shadow-xl h-80 md:h-auto md:aspect-video border border-slate-100 dark:border-white/10">
               <iframe
                 src={CONTACT_INFO.googleMaps.embedUrl}
                 className="absolute inset-0 h-full w-full border-0"

@@ -3,8 +3,16 @@ import { SERVICES, SERVICE_IMAGES } from '@/sites/unique/service/Constant';
 import { ICONS } from '@/sites/shares/constants';
 import CategoryBadge from '@/sites/unique/service/CategoryBadge';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
+import { useScrollAnimationGlobal } from '@/sites/shares/hooks/useScrollAnimationGlobal';
 
 export default function Services() {
+  const headerRef = useScrollAnimation();
+  const descriptionRef = useScrollAnimation();
+  
+  // Observer central pour toutes les cartes
+  useScrollAnimationGlobal();
+
   return (
     <section id="services" className="py-16 bg-light dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative">
       {/* Decorative Background Accents */}
@@ -13,12 +21,9 @@ export default function Services() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ willChange: 'transform' }}
-            className="max-w-2xl"
+          <div
+            ref={headerRef as React.RefObject<HTMLDivElement>}
+            className="max-w-2xl animate-fade-up-on-scroll"
           >
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-[2px] bg-highlight" />
@@ -28,9 +33,12 @@ export default function Services() {
               Soin Textile <br />
               <span className="text-highlight italic font-light underline decoration-highlight underline-offset-8"> Haute Couture.</span>
             </h2>
-          </motion.div>
+          </div>
           
-          <div className="lg:max-w-md">
+          <div 
+            ref={descriptionRef as React.RefObject<HTMLDivElement>}
+            className="lg:max-w-md animate-fade-up-on-scroll"
+          >
             <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed">
               Nous traitons chaque article comme une pièce d'exception. Notre processus combine technologie de pointe et savoir-faire artisanal à Meknès.
             </p>
@@ -40,13 +48,9 @@ export default function Services() {
         {/* New Modular Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service, index) => (
-            <motion.article
+            <article
               key={service.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className={`group relative flex flex-col h-full rounded-[2.5rem] overflow-hidden bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:shadow-2xl hover:shadow-brand/10 transition-all duration-500 ${
+              className={`group relative flex flex-col h-full rounded-[2.5rem] overflow-hidden bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:shadow-2xl hover:shadow-brand/10 transition-all duration-500 animate-fade-up-on-scroll ${
                 index === 0 ? 'md:col-span-2 lg:flex-row' : ''
               }`}
               aria-label={`Service: ${service.title}`}
@@ -91,15 +95,12 @@ export default function Services() {
                   </div>
                 )}
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+        <div
           className="mt-16 p-10 rounded-[3rem] bg-brand text-white flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden"
         >
           <div>
@@ -114,7 +115,7 @@ export default function Services() {
           >
             Demander un devis gratuit
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

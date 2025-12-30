@@ -1,6 +1,8 @@
 import { Head } from '@inertiajs/react';
+import { AnimatePresence } from 'framer-motion';
 import Header from '@/sites/shares/Header';
 import Footer from '@/sites/shares/Footer';
+import Loader from '@/sites/shares/Loader';
 import Hero from '@/sites/unique/hero/Hero';
 import Services from '@/sites/unique/service/Service';
 import Timeline from '@/sites/unique/timeline/Timeline';
@@ -9,29 +11,47 @@ import Gallery from '@/sites/unique/galery/Galerie';
 import Contact from '@/sites/unique/contact/Contacter';
 import Testimonials from '@/sites/unique/testimonial/Testimonials';
 import FAQ from '@/sites/unique/faq/Faq';
+import { usePageLoader } from '@/hooks/usePageLoader';
+import { SEO_INFO } from '@/sites/shares/constants';
 
 export default function Welcome() {
+    const isLoaderVisible = usePageLoader();
+
     return (
         <>
-            <Head title="Welcome" />
+            {/* SEO Meta Tags - Centralized in constants.tsx for easy maintenance */}
+            <Head title={SEO_INFO.default.title}>
+                <meta name="description" content={SEO_INFO.default.description} />
+                <meta name="keywords" content={SEO_INFO.default.keywords} />
+            </Head>
 
-            {/* Site Header */}
-            <Header />
-            
-            {/* Main Content Area - Add your page content here */}
-            <main className="min-h-screen">
-                {/* Your page content goes here */}
-                <Hero />
-                <Services />
-                <Timeline />
-                <Whyus />
-                <Gallery />
-                <Contact />
-                <Testimonials />
-                <FAQ />
-            </main>
-            {/* Site Footer */}
-            <Footer />
+            {/* Page Loader - Affiche au premier chargement */}
+            <AnimatePresence>
+                {isLoaderVisible && <Loader />}
+            </AnimatePresence>
+
+            {/* Contenu affiché seulement après le Loader */}
+            {!isLoaderVisible && (
+                <>
+                    {/* Site Header */}
+                    <Header />
+                    
+                    {/* Main Content Area - Add your page content here */}
+                    <main className="min-h-screen">
+                        {/* Your page content goes here */}
+                        <Hero />
+                        <Services />
+                        <Timeline />
+                        <Whyus />
+                        <Gallery />
+                        <Contact />
+                        <Testimonials />
+                        <FAQ />
+                    </main>
+                    {/* Site Footer */}
+                    <Footer />
+                </>
+            )}
         </>
     );
 }

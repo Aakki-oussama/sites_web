@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { CheckCircle2, Truck } from 'lucide-react';
 import { HERO_FEATURES } from '@/sites/unique/hero/constants';
 import { Button } from '@/components/ui/button';
@@ -8,12 +7,7 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden bg-light dark:bg-dark-bg">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            style={{ willChange: 'transform' }}
-          >
+          <div className="animate-fade-left">
             {/* Semantic Badge */}
             <div 
               className="inline-flex items-center gap-2 bg-light/80 dark:bg-dark-bg/80 backdrop-blur-sm px-4 py-2 rounded-full border border-brand/10 mb-6"
@@ -62,7 +56,7 @@ export default function Hero() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           <div className="relative">
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-brand/10 border-4 border-white/20">
