@@ -90,7 +90,10 @@ export default function Contact() {
             className="relative flex justify-center lg:justify-end"
           >
             {/* Minimalist Phone Mockup */}
-            <div className="relative w-[300px] h-[600px] bg-white dark:bg-slate-900 rounded-[3rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] border-[6px] border-slate-900 dark:border-slate-800 overflow-hidden">
+            <div 
+              className="relative w-[300px] h-[600px] bg-white dark:bg-slate-900 rounded-[3rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] border-[6px] border-slate-900 dark:border-slate-800 overflow-hidden"
+              aria-hidden="true"
+            >
               
               {/* Screen Content */}
               <div className="h-full flex flex-col">

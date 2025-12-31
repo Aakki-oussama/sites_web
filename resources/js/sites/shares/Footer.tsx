@@ -76,11 +76,25 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-4 text-slate-600 dark:text-slate-300 font-semibold">
                 <div className="text-brand dark:text-brand mt-1">{ICONS.MapPin}</div>
-                <span>{CONTACT_INFO.address.full}</span>
+                <address className="not-italic">
+                  <a 
+                    href="https://www.google.com/maps?q=33.8582317,-5.5762441"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-brand dark:hover:text-highlight transition-colors"
+                    aria-label={`Voir l'adresse ${CONTACT_INFO.address.full} sur Google Maps`}
+                  >
+                    {CONTACT_INFO.address.full}
+                  </a>
+                </address>
               </li>
               <li className="flex items-center gap-4 text-slate-600 dark:text-slate-300 font-semibold">
                 <div className="text-brand dark:text-brand">{ICONS.Phone}</div>
-                <a href={`tel:${CONTACT_INFO.phone}`} className="text-slate-600 dark:text-slate-300 hover:text-brand dark:hover:text-highlight transition-colors">
+                <a 
+                  href={`tel:${CONTACT_INFO.phone}`} 
+                  className="text-slate-600 dark:text-slate-300 hover:text-brand dark:hover:text-highlight transition-colors"
+                  aria-label={`Appeler ${CONTACT_INFO.phone}`}
+                >
                   {CONTACT_INFO.phone}
                 </a>
               </li>
