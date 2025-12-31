@@ -9,20 +9,20 @@ export default function Header() {
 
   useEffect(() => {
     let lastCall = 0;
-    
+
     const handleScroll = () => {
       const now = Date.now();
-      
+
       // Throttle: Only execute every 100ms (reduces calls from 60+/sec to ~10/sec)
       if (now - lastCall >= ANIMATION_CONFIG.scroll.throttleMs) {
         lastCall = now;
         setScrolled(window.scrollY > ANIMATION_CONFIG.scroll.headerShrink);
       }
     };
-    
+
     // Add passive listener for smooth scrolling (doesn't block browser)
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -33,19 +33,18 @@ export default function Header() {
         setIsOpen(false);
       }
     };
-    
+
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
   }, [isOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'py-3' : 'py-6'
-    }`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-3' : 'py-6'
+      }`}>
       <div className="container mx-auto px-6">
-        <nav className={`glass rounded-2xl px-6 py-4 flex items-center justify-between shadow-lg border border-white/20`}>
-          <a 
-            href="/" 
+        <nav className={`bg-white/10 dark:bg-slate-900/30 backdrop-blur-[25px] rounded-2xl px-6 py-4 flex items-center justify-between shadow-lg border border-white/20`}>
+          <a
+            href="/"
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             aria-label={`${APP_NAME} - Retour à l'accueil`}
           >
@@ -70,14 +69,14 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button 
+            <button
               className="hidden sm:flex items-center gap-2 text-brand hover:text-highlight transition-colors font-semibold"
               aria-label="Connexion"
             >
               <LogIn size={20} />
               <span>Connexion</span>
             </button>
-            <button 
+            <button
               className="lg:hidden p-2 text-slate-600 dark:text-slate-300"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -90,18 +89,17 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-md transition-transform duration-500 ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
+      <div className={`lg:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-md transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
         {/* Close Button */}
-        <button 
+        <button
           className="absolute top-6 right-6 p-2 text-slate-600 dark:text-slate-300 hover:text-brand dark:hover:text-highlight transition-colors"
           onClick={() => setIsOpen(false)}
           aria-label="Close menu"
         >
           <X size={24} />
         </button>
-        
+
         <div className="flex flex-col items-center justify-center h-full gap-8">
           {NAV_LINKS.map((link) => (
             <a
@@ -113,7 +111,7 @@ export default function Header() {
               {link.name}
             </a>
           ))}
-          <button 
+          <button
             className="flex items-center gap-2 text-brand hover:text-highlight transition-colors font-semibold text-xl"
             aria-label="Connexion"
           >
