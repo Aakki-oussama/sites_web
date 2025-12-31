@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import Header from '@/sites/shares/Header';
 import Footer from '@/sites/shares/Footer';
 import Loader from '@/sites/shares/Loader';
+import ErrorBoundary from '@/sites/shares/components/ErrorBoundary';
 import Hero from '@/sites/unique/hero/Hero';
 import Services from '@/sites/unique/service/Service';
 import Timeline from '@/sites/unique/timeline/Timeline';
@@ -35,22 +36,49 @@ export default function Welcome() {
 
             {/* Contenu toujours rendu mais invisible pendant le loader pour éviter layout shift */}
             <div style={contentStyle}>
-                {/* Site Header */}
+                {/* Site Header - Pas de protection (critique, doit toujours fonctionner) */}
                 <Header />
 
                 {/* Main Content Area - Add your page content here */}
                 <main className="min-h-screen">
-                    {/* Your page content goes here */}
+                    {/* Hero - Pas de protection (première impression critique) */}
                     <Hero />
-                    <Services />
-                    <Timeline />
-                    <Whyus />
-                    <Gallery />
+
+                    {/* Services - Protection individuelle (animations complexes) */}
+                    <ErrorBoundary>
+                        <Services />
+                    </ErrorBoundary>
+
+                    {/* Timeline - Protection individuelle (contenu dynamique) */}
+                    <ErrorBoundary>
+                        <Timeline />
+                    </ErrorBoundary>
+
+                    {/* Whyus - Protection individuelle */}
+                    <ErrorBoundary>
+                        <Whyus />
+                    </ErrorBoundary>
+
+                    {/* Gallery - Protection individuelle (plusieurs images) */}
+                    <ErrorBoundary>
+                        <Gallery />
+                    </ErrorBoundary>
+
+                    {/* Contact - Pas de protection (informations de contact critiques) */}
                     <Contact />
-                    <Testimonials />
-                    <FAQ />
+
+                    {/* Testimonials - Protection individuelle (données externes possibles) */}
+                    <ErrorBoundary>
+                        <Testimonials />
+                    </ErrorBoundary>
+
+                    {/* FAQ - Protection individuelle (contenu dynamique) */}
+                    <ErrorBoundary>
+                        <FAQ />
+                    </ErrorBoundary>
                 </main>
-                {/* Site Footer */}
+
+                {/* Site Footer - Pas de protection (informations de contact critiques) */}
                 <Footer />
             </div>
         </>
