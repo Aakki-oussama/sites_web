@@ -10,10 +10,10 @@ export const SEO_INFO = {
   default: {
     // Page title - appears in browser tab and search results
     title: "Ecolaundry - Pressing Éco-Responsable à Meknès",
-    
+
     // Meta description - shown in search engine results (150-160 characters recommended)
     description: "Ecolaundry - Pressing éco-responsable à Meknès. Services de lavage, nettoyage de tapis, repassage de luxe et livraison à domicile. Excellence du soin textile depuis Meknès.",
-    
+
     // SEO keywords - relevant search terms for better discoverability
     keywords: "pressing Meknès, lavage Meknès, nettoyage tapis Meknès, repassage Meknès, livraison Meknès, pressing écologique, pressing éco-responsable, nettoyage à sec Meknès, blanchisserie Meknès, service de pressing, collecte et livraison Meknès"
   }
