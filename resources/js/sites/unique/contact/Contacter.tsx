@@ -24,7 +24,7 @@ const ContactLinkComponent = ({ icon: Icon, title, value, href, color }: Contact
 
 export default function Contact() {
   const currentTime = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
-  const headerRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="contact" className="py-16 bg-light dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative">
@@ -34,7 +34,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           
           <div
-            ref={headerRef as React.RefObject<HTMLDivElement>}
+            ref={headerRef}
             className="animate-fade-up-on-scroll"
           >
             <div className="flex items-center gap-3 mb-6">

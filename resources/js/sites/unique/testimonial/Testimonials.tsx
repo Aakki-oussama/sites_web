@@ -4,6 +4,7 @@ import { TESTIMONIALS } from './constant';
 import { useTestimonialSlider } from './useTestimonialSlider';
 import { CONTACT_INFO } from '@/sites/shares/constants';
 import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 
 const variants = {
   enter: (direction: number) => ({
@@ -26,7 +27,7 @@ export default function Testimonials() {
   const { activeIndex, direction, next, prev, goTo } = useTestimonialSlider({ 
     totalItems: TESTIMONIALS.length 
   });
-  const headerRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
 
   const current = TESTIMONIALS[activeIndex];
 
@@ -42,7 +43,7 @@ export default function Testimonials() {
           {/* Left Side: Text and Map */}
           <div className="space-y-12">
             <div
-              ref={headerRef as React.RefObject<HTMLDivElement>}
+              ref={headerRef}
               className="animate-fade-up-on-scroll"
             >
               <div className="flex items-center gap-2 mb-4" aria-label="Badge Confiance & Proximité">
@@ -84,8 +85,8 @@ export default function Testimonials() {
                   animate="center"
                   exit="exit"
                   transition={{
-                    opacity: { duration: 0.2 },
-                    x: { type: "spring", stiffness: 300, damping: 30 }
+                    opacity: { duration: ANIMATION_CONFIG.durations.fast },
+                    x: { type: "spring", ...ANIMATION_CONFIG.spring.normal }
                   }}
                   className="w-full"
                 >

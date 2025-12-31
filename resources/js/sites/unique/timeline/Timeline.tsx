@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import { STEPS, METRICS } from '@/sites/unique/timeline/constant';
 import { ICONS } from '@/sites/shares/constants';
 import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 
 export default function Timeline() {
-  const headerRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="process" className="py-16 bg-white dark:bg-dark-bg transition-colors duration-500 overflow-hidden relative border-y border-slate-100 dark:border-white/5">
@@ -15,7 +16,7 @@ export default function Timeline() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-24">
           <div
-            ref={headerRef as React.RefObject<HTMLDivElement>}
+            ref={headerRef}
             className="animate-fade-up-on-scroll"
           >
             <h2 className="text-5xl lg:text-7xl font-black text-brand dark:text-white leading-tight mb-6">
@@ -35,7 +36,7 @@ export default function Timeline() {
               initial={{ width: "0%" }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
+              transition={{ duration: ANIMATION_CONFIG.durations.progress, ease: "easeInOut" }}
               style={{ willChange: 'width' }}
               className="h-full bg-gradient-to-r from-brand via-highlight to-brand"
             />
@@ -48,7 +49,7 @@ export default function Timeline() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
+                transition={{ delay: index * ANIMATION_CONFIG.stagger.slow }}
                 style={{ willChange: 'transform' }}
                 className="relative group flex flex-col items-center lg:items-start text-center lg:text-left"
                 aria-label={`Étape ${step.id}: ${step.title}`}

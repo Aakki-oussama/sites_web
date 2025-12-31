@@ -4,6 +4,7 @@ import type { GalleryItem } from './index';
 import { GALLERY_ITEMS, GALLERY_STATS } from './constant';
 import { useParallax } from './useParallax';
 import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 
 const GalleryCard = ({ item, index }: { item: GalleryItem; index: number }) => {
   const { containerRef, springY } = useParallax();
@@ -14,7 +15,7 @@ const GalleryCard = ({ item, index }: { item: GalleryItem; index: number }) => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8, delay: index * 0.05 }}
+      transition={{ duration: ANIMATION_CONFIG.durations.slow, delay: index * ANIMATION_CONFIG.stagger.fast }}
       style={{ willChange: 'transform' }}
       className="break-inside-avoid mb-8 group relative"
       aria-label={`Galerie: ${item.title}`}
@@ -60,7 +61,7 @@ const GalleryCard = ({ item, index }: { item: GalleryItem; index: number }) => {
 };
 
 export default function Gallery() {
-  const headerRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="gallery" className="py-16 bg-white dark:bg-dark-bg transition-colors duration-500 overflow-hidden" role="region" aria-label="Galerie de nos réalisations">
@@ -69,7 +70,7 @@ export default function Gallery() {
         {/* Minimalist Header */}
         <div className="mb-20 md:mb-32">
           <div
-            ref={headerRef as React.RefObject<HTMLDivElement>}
+            ref={headerRef}
             className="flex flex-col md:flex-row md:items-end justify-between gap-12 animate-fade-up-on-scroll"
           >
             <div className="max-w-2xl relative">
@@ -98,7 +99,7 @@ export default function Gallery() {
         </div>
 
         {/* Dynamic Masonry Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8">
+        <div className="relative columns-1 md:columns-2 lg:columns-3 gap-8">
           {GALLERY_ITEMS.map((item, index) => (
             <GalleryCard key={item.id} item={item} index={index} />
           ))}

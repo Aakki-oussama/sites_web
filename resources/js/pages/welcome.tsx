@@ -17,6 +17,7 @@ import { usePageLoader } from '@/hooks/usePageLoader';
 export default function Welcome() {
     const isLoaderVisible = usePageLoader();
     
+    
     // Mémoriser les styles pour éviter de recréer l'objet à chaque render
     const contentStyle = useMemo<CSSProperties>(
         () => ({
@@ -30,9 +31,11 @@ export default function Welcome() {
     return (
         <>
             {/* Page Loader - Affiche au premier chargement */}
-            <AnimatePresence>
-                {isLoaderVisible && <Loader />}
-            </AnimatePresence>
+            <div style={{ position: 'relative' }}>
+                <AnimatePresence>
+                    {isLoaderVisible && <Loader />}
+                </AnimatePresence>
+            </div>
 
             {/* Contenu toujours rendu mais invisible pendant le loader pour éviter layout shift */}
             <div style={contentStyle}>

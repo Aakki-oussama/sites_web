@@ -1,14 +1,28 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, LogIn } from 'lucide-react';
 import { NAV_LINKS, APP_NAME } from '@/sites/shares/constants';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    let lastCall = 0;
+    
+    const handleScroll = () => {
+      const now = Date.now();
+      
+      // Throttle: Only execute every 100ms (reduces calls from 60+/sec to ~10/sec)
+      if (now - lastCall >= ANIMATION_CONFIG.scroll.throttleMs) {
+        lastCall = now;
+        setScrolled(window.scrollY > ANIMATION_CONFIG.scroll.headerShrink);
+      }
+    };
+    
+    // Add passive listener for smooth scrolling (doesn't block browser)
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

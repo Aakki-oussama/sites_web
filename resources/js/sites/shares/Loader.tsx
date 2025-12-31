@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 
 export default function Loader() {
   return (
@@ -6,8 +7,10 @@ export default function Loader() {
       initial={{ opacity: 1 }}
       exit={{ 
         opacity: 0,
-        transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }
+        transition: { duration: ANIMATION_CONFIG.durations.slow, ease: ANIMATION_CONFIG.easing.default }
       }}
+      layout={false}
+      layoutScroll={false}
       className="fixed inset-0 z-[9999] bg-light dark:bg-dark-bg flex items-center justify-center overflow-hidden"
     >
       <div className="relative flex flex-col items-center">
@@ -17,7 +20,7 @@ export default function Loader() {
           animate={{ 
             scale: 1, 
             opacity: 1,
-            transition: { duration: 0.5, ease: "easeOut" }
+            transition: { duration: ANIMATION_CONFIG.durations.medium, ease: "easeOut" }
           }}
           className="w-20 h-20 bg-brand rounded-2xl flex items-center justify-center mb-6 animate-liquid shadow-2xl shadow-brand/30"
         >
@@ -34,8 +37,8 @@ export default function Loader() {
                 y: 0, 
                 opacity: 1,
                 transition: { 
-                  delay: 0.1 + index * 0.05,
-                  duration: 0.5,
+                  delay: ANIMATION_CONFIG.stagger.normal + index * ANIMATION_CONFIG.stagger.fast,
+                  duration: ANIMATION_CONFIG.durations.medium,
                   ease: "easeOut"
                 }
               }}
@@ -58,7 +61,7 @@ export default function Loader() {
               left: "100%",
               transition: { 
                 repeat: Infinity, 
-                duration: 1.5, 
+                duration: ANIMATION_CONFIG.durations.progress, 
                 ease: "easeInOut" 
               }
             }}
@@ -70,7 +73,7 @@ export default function Loader() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: ANIMATION_CONFIG.durations.slow }}
           className="mt-4 text-[10px] font-bold text-brand/40 dark:text-highlight/40 uppercase tracking-[0.3em]"
         >
           Meknès • Maroc

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, HelpCircle, Heart } from 'lucide-react';
 import type { FAQ } from './index';
 import { FAQS } from './constant';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 
 interface FAQItemProps {
   question: string;
@@ -37,7 +38,7 @@ const FAQItem = ({ question, answer, index }: FAQItemProps) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: ANIMATION_CONFIG.durations.normal, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
             <div className="p-8 text-slate-600 dark:text-slate-400 font-medium leading-relaxed bg-white/50 dark:bg-white/5 mt-2 rounded-[2rem] border border-slate-100 dark:border-white/5">

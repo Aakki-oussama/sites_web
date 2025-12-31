@@ -1,4 +1,5 @@
 import { useEffect, useRef, useMemo } from 'react';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 
 /**
  * Hook personnalisé pour déclencher les animations au scroll
@@ -15,26 +16,31 @@ import { useEffect, useRef, useMemo } from 'react';
  * 
  * @example
  * ```tsx
- * const ref = useScrollAnimation();
+ * // Pour un div
+ * const ref = useScrollAnimation<HTMLDivElement>();
  * 
  * return (
  *   <div ref={ref} className="animate-fade-up-on-scroll">
  *     <h2>Title</h2>
  *   </div>
  * );
+ * 
+ * // Pour un section
+ * const ref = useScrollAnimation<HTMLElement>();
+ * <section ref={ref}>...</section>
  * ```
  */
-export function useScrollAnimation(options?: {
+export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>(options?: {
     threshold?: number;
     rootMargin?: string;
 }) {
-    // Référence à l'élément DOM à observer (HTMLElement pour plus de flexibilité)
-    const ref = useRef<HTMLElement>(null);
+    // Référence à l'élément DOM à observer (type générique pour type safety)
+    const ref = useRef<T>(null);
 
     // Mémoriser les options pour éviter les re-renders inutiles
     const observerOptions = useMemo(
         () => ({
-            threshold: options?.threshold ?? 0.1, // Déclenche quand 10% est visible
+            threshold: options?.threshold ?? ANIMATION_CONFIG.scroll.threshold, // Déclenche quand 10% est visible
             rootMargin: options?.rootMargin ?? '0px', // Pas de marge par défaut
         }),
         [options?.threshold, options?.rootMargin]

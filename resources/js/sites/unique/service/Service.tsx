@@ -7,8 +7,8 @@ import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
 import { useScrollAnimationGlobal } from '@/sites/shares/hooks/useScrollAnimationGlobal';
 
 export default function Services() {
-  const headerRef = useScrollAnimation();
-  const descriptionRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
+  const descriptionRef = useScrollAnimation<HTMLDivElement>();
   
   // Observer central pour toutes les cartes
   useScrollAnimationGlobal();
@@ -22,7 +22,7 @@ export default function Services() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
           <div
-            ref={headerRef as React.RefObject<HTMLDivElement>}
+            ref={headerRef}
             className="max-w-2xl animate-fade-up-on-scroll"
           >
             <div className="flex items-center gap-3 mb-4">
@@ -36,7 +36,7 @@ export default function Services() {
           </div>
           
           <div 
-            ref={descriptionRef as React.RefObject<HTMLDivElement>}
+            ref={descriptionRef}
             className="lg:max-w-md animate-fade-up-on-scroll"
           >
             <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed">

@@ -1,5 +1,6 @@
 import { Phone, Mail, Instagram, Facebook } from 'lucide-react';
 import { CONTACT_INFO } from '@/sites/shares/constants';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 import type { ContactLink, ChatMessage } from './index';
 
 // Contact links data
@@ -49,14 +50,14 @@ export const CHAT_MESSAGES: ChatMessage[] = [
     text: "Bonjour! Nous pouvons passer cet après-midi vers 16h. Nos tarifs commencent à 45 DH/m² pour les tapis. 🚛",
     time: "10:03",
     isFromUser: false,
-    delay: 0.5
+    delay: ANIMATION_CONFIG.durations.medium
   },
   {
     id: 3,
     text: "C'est parfait pour 16h. Merci!",
     time: "10:04",
     isFromUser: true,
-    delay: 1
+    delay: ANIMATION_CONFIG.durations.slow
   }
 ];
 

@@ -5,7 +5,7 @@ import { useScrollAnimation } from '@/sites/shares/hooks/useScrollAnimation';
 import { useScrollAnimationGlobal } from '@/sites/shares/hooks/useScrollAnimationGlobal';
 
 export default function WhyUs() {
-  const headerRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
   
   // Observer central pour toutes les cartes
   useScrollAnimationGlobal();
@@ -18,7 +18,7 @@ export default function WhyUs() {
           {/* Left Column: Content */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <div
-              ref={headerRef as React.RefObject<HTMLDivElement>}
+              ref={headerRef}
               className="animate-fade-up-on-scroll"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand/5 dark:bg-highlight/10 rounded-full border border-brand/10 dark:border-highlight/20 mb-8">

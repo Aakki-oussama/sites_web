@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { ANIMATION_CONFIG } from '@/sites/shares/animations';
 
 /**
  * Hook global pour observer tous les éléments avec la classe animate-fade-up-on-scroll
@@ -46,7 +47,7 @@ export function useScrollAnimationGlobal() {
           });
         },
         {
-          threshold: 0.1, // Déclenche quand 10% est visible
+          threshold: ANIMATION_CONFIG.scroll.threshold, // Déclenche quand 10% est visible
           rootMargin: '0px', // Pas de marge
         }
       );
