@@ -12,7 +12,7 @@ export const SEO_CONFIG = {
         siteName: "Ecolaundry",
         title: "Ecolaundry - Pressing Éco-Responsable à Meknès",
         description: "Service de blanchisserie premium à Meknès. Lavage au kilo à partir de 15 DH/kg, nettoyage de tapis, repassage de luxe et livraison à domicile. Collecte express en moins de 60 minutes.",
-        image: "https://ecolaundry.ma/images/avif/brand.avif",
+        image: "https://ecolaundry.ma/images/avif/seo/brand.png",
         imageAlt: "Ecolaundry - Service de pressing éco-responsable à Meknès",
         imageWidth: "1200",
         imageHeight: "630",
