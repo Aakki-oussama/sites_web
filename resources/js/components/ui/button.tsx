@@ -24,7 +24,7 @@ const buttonVariants = cva(
         // ===== Site web variants (using brand, highlight, light, dark-bg, brand-static) =====
         brand: "rounded-2xl font-blod bg-brand text-light dark:text-dark-bg hover:bg-highlight transition-all shadow-xl shadow-brand/20",
         "brand-outline": "rounded-2xl font-bold text-brand bg-light dark:text-brand-static hover:bg-white transition-all border border-brand/10 shadow-sm",
-        highlight: "rounded-2xl font-bold bg-highlight text-white hover:bg-white hover:text-brand transition-all shadow-xl shadow-black/20",
+        highlight: "rounded-2xl font-bold bg-white text-brand-static hover:bg-btn hover:text-white transition-all shadow-xl shadow-black/20",
       },
       size: {
         // ===== Original sizes (for auth/settings) =====

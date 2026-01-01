@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { WashingMachine, Droplets, Wind, Truck, Sparkles, MapPin, Phone, Instagram, Facebook, MessageCircle, Mail, Clock, Bed, ShieldCheck } from 'lucide-react';
+import { WashingMachine, Droplets, Wind, Truck, Sparkles, MapPin, Phone, Instagram, Facebook, MessageCircle, Mail, Clock, Bed, ShieldCheck, PackageCheck } from 'lucide-react';
 
 export const APP_NAME = "Ecolaundry";
 export const LOCATION = "Meknès, Maroc";
@@ -81,7 +81,8 @@ export const SERVICE_ICONS: Record<string, ReactNode> = {
   Truck: <Truck size={24} />,
   Sparkles: <Sparkles size={24} />,
   Bed: <Bed size={24} />,
-  ShieldCheck: <ShieldCheck size={24} />
+  ShieldCheck: <ShieldCheck size={24} />,
+  PackageCheck: <PackageCheck size={24} />
 };
 
 // All Icons (for backward compatibility)

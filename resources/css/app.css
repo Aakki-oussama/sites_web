@@ -67,6 +67,7 @@
     --color-dark-bg: var(--dark-bg);
     --color-brand-static: var(--brand-static);
     --color-heoro: var(--heoro);
+    --color-btn: var(--btn);
 }
 
 :root {
@@ -115,7 +116,10 @@
     --dark-bg: #0f172a;
     /* Dark background color - was dark */
     --brand-static: #19477b;
+    /* btn color hover */
+    --btn:#2690BA;
     /* Static brand color - never changes in dark mode, used for consistent header/footer colors */
+   
 }
 
 .dark {
@@ -162,6 +166,8 @@
     --dark-bg: #0f172a;
     /* Dark background stays same in dark mode */
     --brand-static: #19477b;
+    /* btn color hover */
+    --btn:#19477b;
     /* Static brand color - never changes in dark mode, used for consistent header/footer colors */
 }
 

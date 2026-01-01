@@ -80,7 +80,7 @@ export default function WhyUs() {
 
             {/* Specialized Card */}
             <div
-              className="group sm:col-span-2 p-10 rounded-[2.5rem] bg-brand text-white flex flex-col sm:flex-row items-center gap-8 relative overflow-hidden"
+              className="group sm:col-span-2 p-6 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-brand text-white flex flex-col sm:flex-row items-center gap-6 sm:gap-8 relative overflow-hidden"
             >
               <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20 group-hover:scale-110 transition-transform duration-500">
                 <Heart className="w-10 h-10 fill-white dark:group-hover:fill-brand" />

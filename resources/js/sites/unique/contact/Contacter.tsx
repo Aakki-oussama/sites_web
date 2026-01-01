@@ -10,14 +10,14 @@ const ContactLinkComponent = ({ icon: Icon, title, value, href, color }: Contact
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center gap-6 p-6 rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl hover:-translate-y-1 transition-all group"
+    className="flex items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:shadow-xl hover:-translate-y-1 transition-all group"
   >
-    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-lg ${color}`}>
-      <Icon size={24} />
+    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-white shadow-lg ${color}`}>
+      <Icon size={20} />
     </div>
     <div>
       <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">{title}</p>
-      <p className="text-brand dark:text-white font-black text-lg group-hover:text-highlight transition-colors">{value}</p>
+      <p className="text-brand dark:text-white font-black text-base sm:text-lg group-hover:text-highlight transition-colors">{value}</p>
     </div>
   </a>
 );
@@ -31,7 +31,7 @@ export default function Contact() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-brand/5 dark:bg-highlight/5 -z-10 skew-x-12 translate-x-1/4 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           
           <div
             ref={headerRef}
@@ -72,7 +72,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Visitez notre page ${social.label}`}
-                      className={`flex-1 flex items-center justify-center gap-3 p-6 rounded-[2rem] ${social.color} text-white font-black uppercase tracking-widest text-xs hover:shadow-xl hover:-translate-y-1 transition-all`}
+                      className={`flex-1 flex items-center justify-center gap-2 sm:gap-3 p-4 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] ${social.color} text-white font-black uppercase tracking-widest text-xs hover:shadow-xl hover:-translate-y-1 transition-all`}
                     >
                       <Icon size={20} aria-hidden="true" /> {social.label}
                     </a>
@@ -91,7 +91,7 @@ export default function Contact() {
           >
             {/* Minimalist Phone Mockup */}
             <div 
-              className="relative w-[300px] h-[600px] bg-white dark:bg-slate-900 rounded-[3rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] border-[6px] border-slate-900 dark:border-slate-800 overflow-hidden"
+              className="relative w-[280px] sm:w-[300px] h-[560px] sm:h-[600px] bg-white dark:bg-slate-900 rounded-[2.5rem] sm:rounded-[3rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] border-[4px] sm:border-[6px] border-slate-900 dark:border-slate-800 overflow-hidden"
               aria-hidden="true"
             >
               

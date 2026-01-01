@@ -71,7 +71,7 @@ export default function Gallery() {
         <div className="mb-20 md:mb-32">
           <div
             ref={headerRef}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-12 animate-fade-up-on-scroll"
+            className="flex flex-col md:flex-row md:items-end justify-between gap-8 animate-fade-up-on-scroll"
           >
             <div className="max-w-2xl relative">
               <div className="flex items-center gap-3 mb-6">
@@ -86,7 +86,7 @@ export default function Gallery() {
               </h2>
             </div>
             
-            <div className="lg:max-w-md">
+            <div className="lg:max-w-md flex flex-col gap-2">
               <p className="text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg lg:text-xl leading-relaxed">
                 Chaque textile est une pièce d'histoire. Découvrez comment nous préservons l'éclat de vos articles les plus précieux.
               </p>
@@ -106,7 +106,7 @@ export default function Gallery() {
         </div>
 
         {/* Minimalist Footer Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 px-8 bg-brand/5 dark:bg-white/5 rounded-[3rem] border border-brand/10 dark:border-white/10" role="region" aria-label="Statistiques de performance">
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 px-8 bg-brand/5 dark:bg-white/5 rounded-[3rem] border border-brand/10 dark:border-white/10" role="region" aria-label="Statistiques de performance">
           {GALLERY_STATS.map((stat) => (
             <div key={stat.label} className="text-center">
               <span className="block text-3xl lg:text-4xl font-black text-brand dark:text-brand tracking-tighter mb-1">{stat.value}</span>

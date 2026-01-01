@@ -5,16 +5,16 @@ import { ShieldCheck, Leaf, Clock, Zap } from 'lucide-react';
 export const REASONS: Reason[] = [
   {
     id: "01",
-    title: "Expertise Artisanale",
-    description: "Chaque fibre est traitée avec le plus grand soin par nos experts formés aux techniques de nettoyage les plus délicates.",
+    title: "Soin maîtrisé",
+    description: "Chaque pièce est manipulée avec soin pour préserver sa qualité et sa tenue.",
     icon: <ShieldCheck className="w-8 h-8" />,
     color: "from-blue-500/20 to-brand/20",
     border: "group-hover:border-brand"
   },
   {
     id: "02",
-    title: "Engagement Vert",
-    description: "Nous utilisons exclusivement des solvants biodégradables et des procédés économes en eau pour un avenir plus propre.",
+    title: "Démarche responsable",
+    description: "Nous adoptons des pratiques de lavage réfléchies pour limiter le gaspillage et assurer un service efficace.",
     icon: <Leaf className="w-8 h-8" />,
     color: "from-green-500/20 to-emerald-500/20",
     border: "group-hover:border-green-500"

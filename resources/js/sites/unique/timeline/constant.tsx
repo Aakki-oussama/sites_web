@@ -17,14 +17,14 @@ export const STEPS: Step[] = [
     {
       id: 3,
       title: "Nettoyage Premium",
-      description: "Utilisation de produits écologiques pour protéger vos fibres.",
+      description: "Chaque pièce est traitée avec soin selon sa nature pour garantir un résultat impeccable.",
       iconName: "Sparkles"
     },
     {
       id: 4,
-      title: "Livraison Fraîcheur",
-      description: "Vos articles reviennent comme neufs en un temps record.",
-      iconName: "Droplets"
+      title: "Retour soigné",
+      description: "Votre linge vous est remis propre, frais et prêt à l’usage.",
+      iconName: "PackageCheck"
     }
   ];
 
