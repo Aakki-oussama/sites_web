@@ -43,7 +43,7 @@ export default function Loader() {
                 }
               }}
               className={`text-3xl font-black tracking-tighter ${
-                index < 3 ? 'text-brand' : 'text-highlight'
+                index < 3 ? 'text-brand' : 'text-highlight dark:text-white'
               }`}
             >
               {letter}
@@ -74,7 +74,7 @@ export default function Loader() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: ANIMATION_CONFIG.durations.slow }}
-          className="mt-4 text-[10px] font-bold text-brand/40 dark:text-highlight/40 uppercase tracking-[0.3em]"
+          className="mt-4 text-[10px] font-bold text-brand dark:text-white/80 uppercase tracking-[0.3em]"
         >
           Meknès • Maroc
         </motion.p>

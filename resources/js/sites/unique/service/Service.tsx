@@ -101,11 +101,11 @@ export default function Services() {
 
         {/* Bottom CTA */}
         <div
-          className="mt-16 p-6 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[3rem] bg-brand text-white flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 relative overflow-hidden"
+          className="mt-16 p-6 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[3rem] bg-brand/5 backdrop-blur-sm text-white flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 relative overflow-hidden"
         >
           <div>
-            <h3 className="text-2xl md:text-3xl font-black mb-2">Vous avez un article volumineux ?</h3>
-            <p className="text-white text-base md:text-lg lg:text-xl opacity-80">Couettes, tapis de luxe, ou rideaux — nous avons l'équipement adapté.</p>
+            <h3 className="text-brand text-2xl md:text-3xl font-black mb-2">Vous avez un article volumineux ?</h3>
+            <p className="text-black dark:text-white text-base md:text-lg lg:text-xl opacity-80">Couettes, tapis de luxe, ou rideaux — nous avons l'équipement adapté.</p>
           </div>
           <Button 
             variant="highlight"
