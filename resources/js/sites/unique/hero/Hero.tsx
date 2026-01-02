@@ -1,6 +1,7 @@
 import { CheckCircle2, Truck } from 'lucide-react';
 import { HERO_FEATURES } from '@/sites/unique/hero/constants';
 import { Button } from '@/components/ui/button';
+import Lightbox from '@/sites/unique/hero/components/Lightbox';
 
 export default function Hero() {
   return (
@@ -39,13 +40,19 @@ export default function Hero() {
               >
                 Empty
               </Button>
-              <Button
-                asChild
-                variant="brand-outline"
-                size="site-md"
-              >
-                <a href="#services">Nos Tarifs</a>
-              </Button>
+              <Lightbox
+                imageSrc="/images/avif/Tarif/Tarif.avif"
+                imageAlt="Nos tarifs - EcoLaundry"
+                trigger={
+                  <Button
+                    variant="brand-outline"
+                    size="site-md"
+                    aria-label="Voir nos tarifs"
+                  >
+                    Nos Tarifs
+                  </Button>
+                }
+              />
             </div>
 
             <ul className="mt-12 flex flex-wrap gap-6 items-center" aria-label="Avantages du service">
